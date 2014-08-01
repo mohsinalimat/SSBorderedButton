@@ -23,6 +23,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SSBorderedButton.h"
+
 
 @implementation AppDelegate
 
@@ -31,7 +33,32 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self createNotCustomizedButton];
+    [self createCustomizedButton];
+    
     return YES;
+}
+
+- (void)createNotCustomizedButton
+{
+    SSBorderedButton *button = [[SSBorderedButton alloc] initWithFrame:CGRectMake(10, 30, 73, 44)];
+    [button setTitle:@"Button" forState:UIControlStateNormal];
+    [self.window addSubview:button];
+}
+
+- (void)createCustomizedButton
+{
+    SSBorderedButton *button = [[SSBorderedButton alloc] initWithFrame:CGRectMake(10, 100, 73, 44)];
+    button.borderWidth = 1;
+    button.cornerRadius = 10;
+    [button setTitle:@"Button" forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+    [button setBorderColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    [button setBorderColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.window addSubview:button];
 }
 
 @end
