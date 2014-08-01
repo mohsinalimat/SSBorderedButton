@@ -1,0 +1,1 @@
+pod 'UIImage+Additions', :podspec => 'UIImage+Additions.podspec'
