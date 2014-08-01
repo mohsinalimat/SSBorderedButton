@@ -26,4 +26,13 @@
 
 @interface SSBorderedButton : UIButton
 
+@property (nonatomic, assign) CGFloat borderWidth;
+@property (nonatomic, assign) CGFloat cornerRadius;
+
+- (void)setBackgroundColor:(UIColor *)color forState:(UIControlState)state;
+- (UIColor *)backgroundColorForState:(UIControlState)state;
+
+- (void)setBorderColor:(UIColor *)color forState:(UIControlState)state;
+- (UIColor *)borderColorForState:(UIControlState)state;
+
 @end
